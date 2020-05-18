@@ -1,0 +1,29 @@
+sum_dataset <- function(x , new_fields) {
+  
+  
+  
+  gb = group_by(fx, Activity, Subject)
+  
+  #toremove = c("Activity" , "Subject")
+  
+  
+  gb = group_by(fx, activity, subject)
+  
+  toremove = c("activity" , "subject")
+  newfields = colnames(fx)
+  newfields = newfields[! newfields %in% toremove]
+  
+  
+  newfields
+  
+  dim(summarise_at(gb, newfields , mean))
+  
+  #summarise_at(gb, .vars = vars(newfields), .funs = "mean")
+  
+  
+  #a = summarise_all(gb, .funs = c(mean="mean"))
+  #summarise_all(gb, gb$`Body Acceleration time - Mean value X`:gb$`Body Acceleration time - Mean value Z`, mean())
+  head(a)
+  
+  
+}

@@ -1,0 +1,91 @@
+Feature Selection 
+=================
+
+The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
+
+Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
+
+Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
+
+These signals were used to estimate variables of the feature vector for each pattern:  
+'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
+
+The set of variables that were estimated from these signals are: 
+
+Mean value
+Standard deviation (Std.Dev)
+
+
+The complete list of variables for detailed and summaized datasets:
+
+Activity
+Subject
+Body Acceleration time - Mean value X
+Body Acceleration time - Mean value Y
+Body Acceleration time - Mean value Z
+Gravity Acceleration time - Mean value X
+Gravity Acceleration time - Mean value Y
+Gravity Acceleration time - Mean value Z
+Body Acceleration Jerk time - Mean value X
+Body Acceleration Jerk time - Mean value Y
+Body Acceleration Jerk time - Mean value Z
+Body Gyroscope time - Mean value X
+Body Gyroscope time - Mean value Y
+Body Gyroscope time - Mean value Z
+Body Gyroscope Jerk time - Mean value X
+Body Gyroscope Jerk time - Mean value Y
+Body Gyroscope Jerk time - Mean value Z
+Body Acceleration Magnitude time - Mean value
+Gravity Acceleration Magnitude time - Mean value
+Body Acceleration Jerk Magnitude time - Mean value
+Body Gyroscope Magnitude time - Mean value
+Body Gyroscope Jerk Magnitude time - Mean value
+Body Acceleration frequency - Mean value X
+Body Acceleration frequency - Mean value Y
+Body Acceleration frequency - Mean value Z
+Body Acceleration Jerk frequency - Mean value X
+Body Acceleration Jerk frequency - Mean value Y
+Body Acceleration Jerk frequency - Mean value Z
+Body Gyroscope frequency - Mean value X
+Body Gyroscope frequency - Mean value Y
+Body Gyroscope frequency - Mean value Z
+Body Acceleration Magnitude frequency - Mean value
+Body Acceleration Jerk Magnitude frequency - Mean value
+Body Gyroscope Magnitude frequency - Mean value
+Body Gyroscope Jerk Magnitude frequency - Mean value
+Body Acceleration time - Std.Dev X
+Body Acceleration time - Std.Dev Y
+Body Acceleration time - Std.Dev Z
+Gravity Acceleration time - Std.Dev X
+Gravity Acceleration time - Std.Dev Y
+Gravity Acceleration time - Std.Dev Z
+Body Acceleration Jerk time - Std.Dev X
+Body Acceleration Jerk time - Std.Dev Y
+Body Acceleration Jerk time - Std.Dev Z
+Body Gyroscope time - Std.Dev X
+Body Gyroscope time - Std.Dev Y
+Body Gyroscope time - Std.Dev Z
+Body Gyroscope Jerk time - Std.Dev X
+Body Gyroscope Jerk time - Std.Dev Y
+Body Gyroscope Jerk time - Std.Dev Z
+Body Acceleration Magnitude time - Std.Dev
+Gravity Acceleration Magnitude time - Std.Dev
+Body Acceleration Jerk Magnitude time - Std.Dev
+Body Gyroscope Magnitude time - Std.Dev
+Body Gyroscope Jerk Magnitude time - Std.Dev
+Body Acceleration frequency - Std.Dev X
+Body Acceleration frequency - Std.Dev Y
+Body Acceleration frequency - Std.Dev Z
+Body Acceleration Jerk frequency - Std.Dev X
+Body Acceleration Jerk frequency - Std.Dev Y
+Body Acceleration Jerk frequency - Std.Dev Z
+Body Gyroscope frequency - Std.Dev X
+Body Gyroscope frequency - Std.Dev Y
+Body Gyroscope frequency - Std.Dev Z
+Body Acceleration Magnitude frequency - Std.Dev
+Body Acceleration Jerk Magnitude frequency - Std.Dev
+Body Gyroscope Magnitude frequency - Std.Dev
+Body Gyroscope Jerk Magnitude frequency - Std.Dev
+
+
+

@@ -1,0 +1,71 @@
+## Merge all datasources, test and train!
+merge_files <- function() {
+  
+  library(dplyr)
+  
+  #--------------------------------------------------------------------------------
+  # Load Features
+  
+  colnames = read.delim("./data/features.txt", sep=" " , header=FALSE)
+  
+  #--------------------------------------------------------------------------------
+  # Load Activities
+  
+  activities = read.delim("./data/activity_labels.txt", sep=" " 
+                  , header=FALSE , col.names = c("Y", "activity"))
+  
+  #head(activities)
+  
+  #--------------------------------------------------------------------------------
+  # Load X Test
+  
+  stest = read.table("./data/test/subject_test.txt", header = FALSE ,
+                     col.names = c("subject")) %>%
+    mutate ( rowid = row_number())
+  
+  xtest = read.delim("./data/test/X_test.txt", sep="" , header=FALSE , 
+                     col.names = colnames$V2 ,  colClasses = numeric()) %>%
+    mutate(source = "test", rowid = row_number())
+  
+  ytest = read.table("./data/test/y_test.txt", header = FALSE , 
+                      col.names = c("Y")) %>%
+    mutate ( rowid = row_number())
+  
+  
+  xtest = merge(xtest , stest , all=TRUE)
+  xtest = merge(xtest , ytest , all=TRUE)
+  xtest = merge(xtest , activities , all=TRUE)
+  
+  #--------------------------------------------------------------------------------
+  # Load X Train
+  
+  strain = read.table("./data/train/subject_train.txt", header = FALSE ,
+                      col.names = c("subject")) %>%
+    mutate ( rowid = row_number())
+  
+  xtrain = read.delim("./data/train/X_train.txt", sep="" , header=FALSE , 
+                      col.names = colnames$V2 ,  colClasses = numeric()) %>%
+    mutate(source = "train", rowid = row_number())
+
+  
+  ytrain = read.table("./data/train/y_train.txt", header = FALSE , 
+                     col.names = c("Y")) %>%
+    mutate ( rowid = row_number())
+  
+    
+  xtrain = merge(xtrain , strain , all=TRUE)
+  xtrain = merge(xtrain , ytrain , all=TRUE)
+  xtrain = merge(xtrain , activities , all=TRUE)
+  
+  #--------------------------------------------------------------------------------
+  # Merge de datasets X test and train => x! 
+  
+  x = rbind(xtest, xtrain)
+  # colnames(x)
+  # dim(x)
+  
+  return (x)
+}
+
+
+

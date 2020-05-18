@@ -1,0 +1,17 @@
+extract_some <- function( x , list ) {
+
+  # Fields to extract
+  cn = c ()
+  for ( f in list ) {
+    cn = c ( cn , grep(f , colnames(x), value=TRUE) )
+  }
+  
+  
+  library(dplyr)
+  nx = select(x , !!!cn)
+  
+  return (nx)  
+}
+
+
+
