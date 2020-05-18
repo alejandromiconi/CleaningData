@@ -46,5 +46,5 @@ ds_some_rename = rename_fields(ds_some)
 ds_summary = sum_dataset(ds_some)
 ds_summary = rename_fields(ds_summary)
 
-## To Control Summary DataSet
+## Output Summary DataSet
 write.table(ds_summary,"./data/ds_summary.txt", row.name = FALSE)
